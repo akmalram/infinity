@@ -1,0 +1,421 @@
+@import './mixins';
+@import './smart-grid';
+
+$container: 1100px;
+$container-md: 970px;
+$color-primary: #333;
+$color-secondary: #fff;
+
+header {
+    background-color: #333;
+    box-shadow: inset 0 0 1000px 1000px rgba(#000, .6);
+}
+
+header {
+    background: #333 url(../images/webp/header-bg.webp) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    @include sm-block {
+        background: #333 url(../images/webp/header-bg-sm.webp) center center no-repeat;
+        background-size: cover;
+    }
+}
+
+.header-content {
+    @include flex-center();
+    min-height: 80vh;
+    text-align: center;
+    color: #fff;
+
+    .page-title {
+        font-size: 47px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+
+    .page-desc {
+        font-size: 23px;
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 20px;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ::selection {
+        background: #000; /* Safari */
+        color: #fff;
+    }
+
+    @include md-block {
+        .page-title {
+            font-size: 43px;
+            line-height: 1.2;
+        }
+
+        .page-desc {
+            font-size: 21px;
+            line-height: 1.5;
+        }
+    }
+
+    @include sm-block {
+        min-height: 50vh;
+
+        .page-title {
+            font-size: 37px;
+        }
+
+        .page-desc {
+            font-size: 19px;
+            line-height: 1.4;
+        }
+    }
+
+    @include xs-block {
+        padding-top: 50px;
+        .page-title {
+            font-size: 27px;
+        }
+
+        .page-desc {
+            font-size: 17px;
+        }
+    }
+}
+
+.navbar {
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .2s ease-in-out;
+    z-index: 1111;
+    padding: 10px 0;
+
+    &.scrolled &-menu .item {
+        height: 70px;
+    }
+
+    &-container {
+        max-width: 95%;
+        width: $container;
+        margin: 0 auto;
+
+        @include md-block {
+            width: $container-md;
+        }
+    }
+
+    &-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &-logo {
+        a {
+            font-size: 30px;
+            color: $color-primary;
+
+            @include md-block {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .checkbox-opener {
+        display: none;
+    }
+
+    &-menu {
+        box-sizing: border-box;
+
+        .list {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .item {
+            margin: 0 7px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: height 200ms ease-in-out;
+
+            position: relative;
+
+            @include md-block {
+                height: 70px;
+            }
+        }
+
+        .link {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+            display: inline-block;
+            padding: 7px;
+            overflow: hidden;
+
+            // button animation
+            position: relative;
+            transition: all .2s ease-in-out;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                bottom: 0;
+                z-index: 111;
+
+                background: #000;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity .2s ease-in-out;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-toggler {
+        .btn {
+            width: 35px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1111;
+        }
+
+        .btn .lines {
+            width: 80%;
+            height: 3px;
+            background: #000;
+            border-radius: 10px;
+            transition: all .3s ease-in-out;
+            transform: rotate(0) translate(0, 0);
+        }
+
+        .btn.active {
+            .line-2 {
+                opacity: 0;
+            }
+
+            .line-1 {
+                transform: rotate(221deg) translate(-5px, -6px);
+            }
+
+            .line-3 {
+                transform: rotate(-220deg) translate(-6px, 7px);
+            }
+        }
+    }
+
+    &-contacts {
+        text-align: center;
+        .phone-call {
+            a {
+                font-size: 19px;
+                color: $color-primary;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .telegram {
+            margin-bottom: 5px;
+
+            .btn-telegram {
+                font-size: 16px;
+                padding: 4px 6px;
+            }
+        }
+    }
+}
+
+// Media Small
+
+@include sm-block {
+    .navbar {
+        padding: 5px 0;
+
+        &-inner {
+            flex-wrap: wrap;
+        }
+
+        // Flex ordering
+        &-contacts {
+            order: 3;
+            width: 33%;
+        }
+
+        &-logo {
+            order: 2;
+            width: 33%;
+        }
+
+        &-toggler {
+            order: 1;
+            width: 33%;
+        }
+        // Flex ordering
+
+
+        &-logo {
+            text-align: center;
+            a {
+                font-size: 20px;
+            }
+        }
+
+        &-toggler {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &-menu {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            height: 100%;
+            transition: all .3s ease-in-out;
+            background: #fff;
+            padding: 50px 20px;
+
+            &.active {
+                left: 0;
+            }
+
+            .list {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            .item {
+                margin: 0;
+                height: auto;
+                position: static;
+                display: block;
+                width: 100%;
+            }
+
+            .link {
+                display: block;
+                font-size: 20px;
+
+                label {
+                    display: flex;
+                    width: 100%;
+
+                    i {
+                        margin-left: auto;
+                        margin-right: 10px;
+                        font-size: 16px;
+                        transition: transform .3s ease-in-out;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+
+        &-menu-contact-info {
+            margin-top: 90px;
+            .phone-call a, .email a {
+                color: #000;
+                font-size: 18px;
+
+                i {
+                    margin-right: 5px;
+                    display: inline-block !important;
+                }
+            }
+
+            .phone-call,
+            .telegram,
+            .email {
+                margin-bottom: 9px;
+            }
+
+            .address i {
+                margin-right: 5px;
+                font-size: 19px;
+            }
+        }
+
+        &-menu &-logo {
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        &-contacts {
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            .telegram {
+                margin-bottom: 0;
+                margin-left: 5px;
+            }
+
+            .phone-call {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@include xs-block {
+    .navbar {
+        &-menu {
+            width: 100%;
+        }
+
+        &-contacts {
+            display: flex;
+            align-items: center;
+
+            .phone-call {
+                a {
+                    display: inline-block;
+                    font-size: 12px;
+                    border: 2px solid #333;
+                    border-radius: 5px;
+                    padding: 4px 6px;
+                }
+            }
+
+            .phone-call i, .telegram i{
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+// Submenu adaptive

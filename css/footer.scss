@@ -1,0 +1,87 @@
+@import './colors';
+@import './mixins';
+@import './smart-grid';
+
+footer {
+    @include content-padding();
+    background: #1C1E26;
+    color: #fff;
+
+    .row {
+        justify-content: space-around;
+    }
+
+    .col {
+        @include col();
+        @include size(6);
+        @include size-sm(8);
+        @include size-xs(24);
+
+        @include xs-block {
+            padding: 10px 0;
+            &:not(:last-of-type) {
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .with-icon {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .icon {
+            text-align: center;
+            width: 30px;
+            flex-shrink: 0;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .content {
+            a {
+                font-size: 17px;
+                color: #fff;
+
+                @include sm-block {
+                    font-size: 16px;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    ul {
+        li {
+            margin-bottom: 5px;
+        }
+        a {
+            font-size: 17px;
+            color: #FFF;
+
+            @include sm-block {
+                font-size: 16px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 40px;
+
+        @include xs-block {
+            margin-top: 20px;
+        }
+
+    }
+}
