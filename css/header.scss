@@ -102,9 +102,6 @@ header {
     z-index: 1111;
     padding: 10px 0;
 
-    &.scrolled &-menu .item {
-        height: 70px;
-    }
 
     &-container {
         max-width: 95%;
