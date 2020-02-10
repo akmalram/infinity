@@ -281,6 +281,18 @@ ready(() => {
     modalToggler('.open-modal-paris','.details-modal.paris');
 });
 
+ready(() => {
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        if(scrollY > 50) navbar.classList.add('scrolled');
+        else if (scrollY < 50) navbar.classList.remove('scrolled');
+    });
+
+    if(scrollY > 50) navbar.classList.add('scrolled');
+    else if (scrollY < 50) navbar.classList.remove('scrolled');
+});
+
 const fontAwesomeFreeObserver = new FontFaceObserver('Font Awesome 5 Free');
 const fontAwesomeBrandsObserver = new FontFaceObserver('Font Awesome 5 Brands');
 const gilroyObserver = new FontFaceObserver('Gilroy');

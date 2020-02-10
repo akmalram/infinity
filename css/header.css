@@ -109,14 +109,34 @@ header {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #fff;
   position: fixed;
   top: 0;
   left: 0;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   z-index: 1111;
-  padding: 10px 0;
+}
+
+.navbar.scrolled {
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+}
+
+.navbar.scrolled .navbar-menu .list .link {
+  color: #333;
+}
+
+.navbar.scrolled .navbar-logo a {
+  color: #333;
+}
+
+.navbar.scrolled .navbar-contacts .phone-call a {
+  color: #333;
+}
+
+.navbar.scrolled .navbar-inner {
+  border: none;
 }
 
 .navbar-container {
@@ -142,11 +162,13 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(150, 146, 212, 0.25);
 }
 
 .navbar-logo a {
   font-size: 30px;
-  color: #333;
+  color: #fff;
 }
 
 @media screen and (max-width: 1024px) {
@@ -203,9 +225,9 @@ header {
 }
 
 .navbar-menu .link {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  color: #000000;
+  color: #fff;
   display: inline-block;
   padding: 7px;
   overflow: hidden;
@@ -223,7 +245,7 @@ header {
   left: 0;
   bottom: 0;
   z-index: 111;
-  background: #000;
+  background: #fff;
   opacity: 0;
   z-index: -1;
   -webkit-transition: opacity .2s ease-in-out;
@@ -285,7 +307,7 @@ header {
 
 .navbar-contacts .phone-call a {
   font-size: 19px;
-  color: #333;
+  color: #fff;
 }
 
 .navbar-contacts .phone-call a:hover {

@@ -287,8 +287,8 @@ button {
 
 .btn-telegram {
     @include btn();
-    color: #0dace8;
-    background-color: #fff;
+    color: #fff;
+    background-color: #0dace8;
     border-color: #0dace8;
 
     &:hover,

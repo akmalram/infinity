@@ -94,14 +94,32 @@ header {
 .navbar {
     width: 100%;
     box-sizing: border-box;
-    background: #fff;
     position: fixed;
     top: 0;
     left: 0;
     transition: all .2s ease-in-out;
     z-index: 1111;
-    padding: 10px 0;
 
+    &.scrolled {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+    }
+
+    &.scrolled &-menu .list .link {
+        color: #333;
+    }
+
+    &.scrolled &-logo a {
+        color: #333;
+    }
+
+    &.scrolled &-contacts .phone-call a {
+        color: #333;
+    }
+
+    &.scrolled &-inner {
+        border: none;
+    }
 
     &-container {
         max-width: 95%;
@@ -118,12 +136,14 @@ header {
         align-items: center;
         justify-content: space-between;
         position: relative;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(150, 146, 212, 0.25);
     }
 
     &-logo {
         a {
             font-size: 30px;
-            color: $color-primary;
+            color: #fff;
 
             @include md-block {
                 font-size: 24px;
@@ -160,9 +180,9 @@ header {
         }
 
         .link {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            color: #000000;
+            color: #fff;
             display: inline-block;
             padding: 7px;
             overflow: hidden;
@@ -181,7 +201,7 @@ header {
                 bottom: 0;
                 z-index: 111;
 
-                background: #000;
+                background: #fff;
                 opacity: 0;
                 z-index: -1;
                 transition: opacity .2s ease-in-out;
@@ -234,7 +254,7 @@ header {
         .phone-call {
             a {
                 font-size: 19px;
-                color: $color-primary;
+                color: #fff;
 
                 &:hover {
                     text-decoration: underline;

@@ -480,8 +480,8 @@ button {
   display: inline-block;
   border: 2px solid #333;
   border-radius: 5px;
-  color: #0dace8;
-  background-color: #fff;
+  color: #fff;
+  background-color: #0dace8;
   border-color: #0dace8;
 }
 
