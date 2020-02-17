@@ -279,6 +279,7 @@ ready(() => {
     }
 
     modalToggler('.open-modal-paris','.details-modal.paris');
+    modalToggler('.open-modal-egypt','.details-modal.egypt');
 });
 
 ready(() => {

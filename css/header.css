@@ -372,6 +372,19 @@ header {
     transition: all .3s ease-in-out;
     background: #fff;
     padding: 50px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    text-align: center;
   }
   .navbar-menu.active {
     left: 0;
@@ -398,6 +411,7 @@ header {
   .navbar-menu .link {
     display: block;
     font-size: 20px;
+    color: #333;
   }
   .navbar-menu .link label {
     display: -webkit-box;
@@ -438,6 +452,12 @@ header {
   .navbar-menu .navbar-logo {
     margin-bottom: 40px;
     width: 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+  .navbar-menu .navbar-logo a {
+    color: #333;
   }
   .navbar-contacts {
     display: -webkit-box;
@@ -474,7 +494,7 @@ header {
   .navbar-contacts .phone-call a {
     display: inline-block;
     font-size: 12px;
-    border: 2px solid #333;
+    border: 2px solid #fff;
     border-radius: 5px;
     padding: 4px 6px;
   }

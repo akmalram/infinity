@@ -245,14 +245,13 @@ main {
             }
 
             p {
-                font-size: 20px;
-                font-weight: 700;
+                font-size: 18px;
                 margin-top: 10px;
 
                 @include md-block {
                     font-size: 16px;
                 }
-                
+
                 @include sm-block {
                     font-size: 14px;
                 }
@@ -268,7 +267,7 @@ main {
                 transform: translateY(-40px);
                 opacity: 0;
                 transition: all .2s ease;
-                color: red;
+                color: #333;
 
                 @include md-block {
                     font-size: 20px;
@@ -339,7 +338,7 @@ main {
     .checkbox-4:checked ~ .tab-nav .tab-item .checker-4,
     .checkbox-5:checked ~ .tab-nav .tab-item .checker-5,
     .checkbox-6:checked ~ .tab-nav .tab-item .checker-6  {
-        color: red;
+        color: #333;
         background: #f5f5f5;
 
         i {
@@ -348,7 +347,7 @@ main {
         }
 
         &::before {
-            background-color: red;
+            background-color: #333;
         }
     }
 
