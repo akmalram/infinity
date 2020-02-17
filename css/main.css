@@ -777,4 +777,24 @@ main {
 .partners .swiper-slide {
   text-align: center;
 }
+
+.arrows {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.arrows .swiper-button-prev,
+.arrows .swiper-button-next {
+  background: none;
+  width: auto;
+  height: auto;
+  position: static;
+  font-size: 40px;
+  color: #333;
+  padding: 0px 8px;
+}
 /*# sourceMappingURL=main.css.map */

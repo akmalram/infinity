@@ -597,3 +597,24 @@ main {
         text-align: center;
     }
 }
+
+
+.arrows {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    display: flex;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        background: none;
+        width: auto;
+        height: auto;
+        position: static;
+
+        font-size: 40px;
+        color: #333;
+        padding: 0px 8px;
+    }
+
+}
